@@ -1,5 +1,5 @@
 class CreateShops < ActiveRecord::Migration[6.0]
-  def up
+  def change
     create_table :shops do |t|
       t.string      :name, null: false, index: true, unique: true
       t.text        :description, null: false
@@ -12,17 +12,22 @@ class CreateShops < ActiveRecord::Migration[6.0]
       t.integer     :tax_percentage, default: 0
       t.boolean     :stop_orders, default: false
       t.string      :order_forwarding_number
-      t.string      :business_address, null: false
       t.string      :business_phone_number, null: false, unique: true
       t.string      :business_openning_time, null: false
       t.string      :business_closing_time, null: false
       t.string      :custom_questions, array: true, default: []
+      t.float       :latitude
+      t.float       :longitude
+      t.string      :street_number
+      t.string      :route
+      t.string      :locality
+      t.string      :administrative_area_level_1
+      t.string      :country
+      t.string      :postal_code
       t.references  :user
       t.timestamps
     end
-  end
 
-  def down
-    drop_table :shops
+    add_index :shops, [:latitude, :longitude]
   end
 end

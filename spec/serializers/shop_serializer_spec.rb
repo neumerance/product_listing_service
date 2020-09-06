@@ -21,7 +21,6 @@ describe ShopSerializer do
       tax_percentage: shop.tax_percentage,
       stop_orders: shop.stop_orders,
       order_forwarding_number: shop.order_forwarding_number,
-      business_address: shop.business_address,
       business_phone_number: shop.business_phone_number,
       business_openning_time: shop.business_openning_time,
       business_closing_time: shop.business_closing_time,

@@ -1,5 +1,5 @@
 class CreateProducts < ActiveRecord::Migration[6.0]
-  def up
+  def change
     create_table :products do |t|
       t.string      :name, null: false
       t.text        :description, null: false
@@ -7,9 +7,5 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.references  :shop
       t.timestamps
     end
-  end
-
-  def down
-    drop_table :products
   end
 end

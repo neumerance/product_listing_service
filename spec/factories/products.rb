@@ -6,6 +6,9 @@ FactoryBot.define do
     price { 10 }
 
     trait :with_images do
+      after :create do |product|
+        create_list(:image, 3, imageable: product)
+      end
     end
   end
 end

@@ -66,14 +66,22 @@ ActiveRecord::Schema.define(version: 2020_08_23_005124) do
     t.integer "tax_percentage", default: 0
     t.boolean "stop_orders", default: false
     t.string "order_forwarding_number"
-    t.string "business_address", null: false
     t.string "business_phone_number", null: false
     t.string "business_openning_time", null: false
     t.string "business_closing_time", null: false
     t.string "custom_questions", default: [], array: true
+    t.float "latitude"
+    t.float "longitude"
+    t.string "street_number"
+    t.string "route"
+    t.string "locality"
+    t.string "administrative_area_level_1"
+    t.string "country"
+    t.string "postal_code"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["latitude", "longitude"], name: "index_shops_on_latitude_and_longitude"
     t.index ["name"], name: "index_shops_on_name"
     t.index ["user_id"], name: "index_shops_on_user_id"
   end

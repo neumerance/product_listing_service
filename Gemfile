@@ -54,4 +54,8 @@ gem 'devise_token_auth'
 # object serializer
 gem 'fast_jsonapi'
 
+# api documentation
 gem 'apipie-rails'
+
+# geocode object
+gem 'geocoder'
