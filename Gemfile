@@ -54,3 +54,4 @@ gem 'devise_token_auth'
 # object serializer
 gem 'fast_jsonapi'
 
+gem 'apipie-rails'
