@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2020_08_23_005124) do
     t.string "business_phone_number", null: false
     t.string "business_openning_time", null: false
     t.string "business_closing_time", null: false
-    t.string "custome_questions", default: [], array: true
+    t.string "custom_questions", default: [], array: true
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -16,7 +16,7 @@ class CreateShops < ActiveRecord::Migration[6.0]
       t.string      :business_phone_number, null: false, unique: true
       t.string      :business_openning_time, null: false
       t.string      :business_closing_time, null: false
-      t.string      :custome_questions, array: true, default: []
+      t.string      :custom_questions, array: true, default: []
       t.references  :user
       t.timestamps
     end

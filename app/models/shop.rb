@@ -9,6 +9,7 @@ class Shop < ApplicationRecord
 
   validates :business_logo, presence: false,
             blob: {
-              content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..5.megabytes
+              content_type: ['image/png', 'image/jpg', 'image/jpeg'],
+              size_range: 1..5.megabytes
             }
 end

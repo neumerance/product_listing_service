@@ -46,4 +46,7 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
+  config.load_defaults "6.0"
+  config.autoloader = :classic
 end
+

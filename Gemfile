@@ -33,6 +33,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.1'
   gem 'shoulda-matchers', '~> 4.0'
+  gem 'factory_bot_rails'
+  gem 'ffaker'
 end
 
 group :development do
@@ -48,3 +50,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # authentication gem
 gem 'devise'
 gem 'devise_token_auth'
+
+# object serializer
+gem 'fast_jsonapi'
+
