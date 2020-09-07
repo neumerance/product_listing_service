@@ -1,17 +1,18 @@
 class Shop < ApplicationRecord
-  validates :name, :description, :tags, :order_forwarding_number,
-            :business_phone_number,:business_openning_time,
-            :business_closing_time, presence: true
-
-  has_one_attached  :business_logo
-  has_many          :products, dependent: :destroy
-  belongs_to        :user
-
+  validates :description, :tags, :order_forwarding_number,
+            :business_openning_time, :business_closing_time,
+            presence: true
+  validates :name, :business_phone_number,
+            uniqueness: true, presence: true
   validates :business_logo, presence: false,
             blob: {
               content_type: ['image/png', 'image/jpg', 'image/jpeg'],
               size_range: 1..5.megabytes
             }
+
+  has_one_attached  :business_logo
+  has_many          :products, dependent: :destroy
+  belongs_to        :user
 
   attr_accessor :address
 

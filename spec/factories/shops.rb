@@ -5,7 +5,7 @@ FactoryBot.define do
     description { FFaker::Lorem.paragraph }
     tags { ['fastfood', 'food'] }
     order_forwarding_number { '+63092377877878' }
-    business_phone_number { '+63092377877878' }
+    business_phone_number { FFaker::PhoneNumberSG.fixed_line_number }
     business_openning_time { '09:30' }
     business_closing_time { '19:00' }
     route { 'Rizal Avenue' }
