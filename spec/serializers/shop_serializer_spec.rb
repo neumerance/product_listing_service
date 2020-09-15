@@ -9,7 +9,6 @@ describe ShopSerializer do
   let(:shop) { create(:shop) }
   let(:expectation) do
     {
-      id: shop.id,
       name: shop.name,
       description: shop.description,
       tags: shop.tags,
@@ -24,7 +23,15 @@ describe ShopSerializer do
       business_phone_number: shop.business_phone_number,
       business_openning_time: shop.business_openning_time,
       business_closing_time: shop.business_closing_time,
-      custom_questions: shop.custom_questions
+      custom_questions: shop.custom_questions,
+      latitude: shop.latitude,
+      longitude: shop.longitude,
+      street_number: shop.street_number,
+      route: shop.route,
+      locality: shop.locality,
+      administrative_area_level_1: shop.administrative_area_level_1,
+      country: shop.country,
+      postal_code: shop.postal_code
     }
   end
 
