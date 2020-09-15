@@ -31,7 +31,9 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def nearby_shops
-    return if params[:nearby].blank?
+    return if params.dig(:nearby, :lat).blank? ||
+              params.dig(:nearby, :lon).blank? ||
+              params.dig(:nearby, :radius).blank?
 
     coordinates = params[:nearby]
     @nearby_shops = Shop.near(
