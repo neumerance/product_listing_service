@@ -18,20 +18,10 @@ class Shop < ApplicationRecord
 
   geocoded_by :address
 
-  before_validation :geocode, if: ->(obj) do
-    obj.address.present? &&
-    obj.street_number_changed? ||
-    obj.route_changed? ||
-    obj.locality_changed? ||
-    obj.administrative_area_level_1_changed? ||
-    obj.country_changed?
-    obj.postal_code_changed? || obj.new_record?
-  end
-
   def address
     [
       street_number, route, locality,
       administrative_area_level_1, country, postal_code
-    ].join(' ').strip
+    ].compact.join(' ').strip
   end
 end

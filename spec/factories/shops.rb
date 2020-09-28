@@ -12,6 +12,8 @@ FactoryBot.define do
     locality { 'Olongapo' }
     administrative_area_level_1 { 'Central Luzon' }
     country { 'Philippines' }
+    latitude { 14.8418823 }
+    longitude { 120.2875443 }
 
     trait :with_products do
       after :create do |shop|
