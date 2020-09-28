@@ -41,14 +41,18 @@ describe Api::V1::ShopsController, type: :request do
 
     before do
       sign_in user
+
       put "/api/v1/shops/#{shop.id}", params: {
-        shop: { name: "updated name" }
+        shop: {
+          **shop.attributes.symbolize_keys.except(:name, :id, :created_at, :updated_at),
+          description: 'description updates'
+        }
       }
     end
 
     it 'updates shop' do
       expect(response).to have_http_status :success
-      expect(json_response.dig('attributes', 'name')).to eq 'updated name'
+      expect(json_response.dig('attributes', 'description')).to eq 'description updates'
     end
   end
 
